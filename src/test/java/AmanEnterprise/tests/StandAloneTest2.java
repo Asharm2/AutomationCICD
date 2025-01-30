@@ -16,7 +16,7 @@ import java.util.List;
 
 public class StandAloneTest2 extends BaseTest {
 
-    String proName = "adidas original";
+    String proName = "qwerty";
 
     @Test(dataProvider = "getData", groups = {"Purchase"})
     public void submitOrder(HashMap<String, String> input) throws IOException {
