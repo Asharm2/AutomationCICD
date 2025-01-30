@@ -1,0 +1,12 @@
+[
+  {
+    "userEmail": "testaman@gmail.com",
+    "userPassword": "Test@123",
+    "productName": "banarsi saree"
+  },
+  {
+    "userEmail": "amantest@gmail.com",
+    "userPassword": "IamKing@123",
+    "productName": "qwerty"
+  }
+]

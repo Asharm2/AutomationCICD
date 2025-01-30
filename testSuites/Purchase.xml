@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Purchase">
+    <groups>
+        <run>
+            <include name="Purchase" />
+        </run>
+    </groups>
+    <test thread-count="5" name="Submit Order Test">
+        <classes>
+            <class name="AmanEnterprise.tests.StandAloneTest2"/>
+        </classes>
+    </test>
+
+    <test thread-count="2" name="Error Validation Test">
+        <classes>
+            <class name="AmanEnterprise.tests.ErrorValidations"/>
+        </classes>
+    </test>
+</suite>
