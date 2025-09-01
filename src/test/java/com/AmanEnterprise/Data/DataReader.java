@@ -1,5 +1,6 @@
 package com.AmanEnterprise.Data;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
@@ -30,6 +31,29 @@ public class DataReader {
 
         //so now, this "data" is a list of 2 HashMaps {{map1}, {map2}}
         return data;
+    }
+
+    public List<HashMap<String, String>> practice(){
+        String jsonFilePath = System.getProperty("user.dir") + "src//test//java//com//AmanEnterprise//Data//PurchaseOrder.json";
+        //read the file into String
+        String jsonContentIntoString;
+        try {
+            jsonContentIntoString = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        //create a mapper object
+        ObjectMapper mapper = new ObjectMapper();
+
+        //convert the string object into hashmap --> Throws JsonProcessingException
+        List<HashMap<String, String>> jsonData;
+        try {
+            jsonData =  mapper.readValue(jsonContentIntoString, new TypeReference<List<HashMap<String, String>>>(){});
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        return jsonData;
+
     }
 
 }
